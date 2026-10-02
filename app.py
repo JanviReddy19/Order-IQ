@@ -128,7 +128,7 @@ with tab1:
 
 with tab2:
     st.subheader("Findings and Recommendations")
-    st.caption("These statements are generated from the loaded dataset. In real-data mode they are suitable for your project report; in demo mode they are explicitly illustrative.")
+    st.caption("These findings are calculated from the loaded dataset; demo-mode results are explicitly illustrative.")
 
     # Build cancellation outcome for descriptive findings only.
     finding_orders = orders.copy()

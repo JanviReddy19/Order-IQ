@@ -4,13 +4,14 @@
 
 **Live demo:** [Order IQ — Live Demo](https://order-iq-fh7nbrrnmj768bchpd7rsl.streamlit.app/)
 
-**Dataset:** UCI Online Retail, 541,909 transaction lines covering 1 Dec 2010–9 Dec 2011. UCI documents `C`-prefixed invoice numbers as cancellation records.
+**Dataset:** UCI Online Retail contains 541,909 source transaction lines covering 1 Dec 2010–9 Dec 2011. UCI documents `C`-prefixed invoice numbers as cancellation records.
 
 ## Real-data findings
 
 The analysis below was generated from the real UCI Online Retail data, not synthetic demo data.
 
 - **Transaction lines:** 541,907 loaded transaction lines
+- **Data-cleaning difference:** 2 source rows were excluded during validation/cleaning, so the application reports 541,907 loaded transaction lines.
 - **Genuine sales orders:** 20,726
 - **Matched cancellation-to-order pairs:** 1,296
 - **Matched cancellation rate:** 5.824% of genuine sales orders (**lower-bound estimate**)
@@ -46,8 +47,6 @@ The held-out test set contains 3,203 eligible orders and 189 observed cancellati
 | 10% | 320 | 50 | 26.5% | 6.4 |
 | 20% | 640 | 75 | 39.7% | 8.5 |
 | 30% | 960 | 96 | 50.8% | 10.0 |
-
-> **Interview-ready statement:** In time-held-out back-testing on the UCI data, reviewing the riskiest 10% of eligible orders captured 26.5% of eventual cancellations.
 
 This is historical back-testing. It does not establish that the same capture rate will hold after deployment.
 
@@ -157,7 +156,7 @@ The script intentionally fails if the loader falls back to synthetic data, preve
 
 ## Deployment
 
-Streamlit Community Cloud deploys from a GitHub repository by selecting the repository, branch and `app.py` entrypoint. After deployment, replace the placeholder live URL above with the actual `streamlit.app` URL.
+Streamlit Community Cloud deploys this repository using `app.py` as the entrypoint. The live application is linked above.
 
 ## Dataset citation
 

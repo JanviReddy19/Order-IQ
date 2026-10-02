@@ -7,4 +7,5 @@ models/*.joblib
 data/raw/
 data/processed/
 .streamlit/secrets.toml
-reports/real_metrics.json
+reports/
+**/__pycache__/
