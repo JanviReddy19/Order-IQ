@@ -253,7 +253,11 @@ with tab4:
     high["Order Value (₹)"] = high["OrderValue"] * GBP_TO_INR
     high["Prior cancellation rate"] = (high["PriorCancellationRate"] * 100).round(1)
     cols = ["InvoiceNo", "Order Value (₹)", "TotalQuantity", "UniqueProducts", "IsAnonymous", "PriorCancellations", "Prior cancellation rate", "AnomalyScore", "RiskScore", "RiskLevel", "Priority", "CancellationProbability"]
-    st.dataframe(high[cols], use_container_width=True, hide_index=True)
+    high_display = high[cols].copy()
+    # Streamlit renders boolean dataframe cells as checkbox-like controls.
+    # Keep the underlying boolean for analytics, but use readable text in the read-only risk table.
+    high_display["IsAnonymous"] = high_display["IsAnonymous"].map({True: "Yes", False: "No"})
+    st.dataframe(high_display, use_container_width=True, hide_index=True)
 
 with tab5:
     st.subheader("Exceptions tracker")

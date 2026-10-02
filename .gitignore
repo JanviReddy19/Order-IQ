@@ -1,21 +1,10 @@
-# Python
-__pycache__/
-*.py[cod]
-
-# Virtual environment
 .venv/
-venv/
-
-# Real UCI dataset - DO NOT upload
-data/raw/
-
-# Generated real-data reports
-reports/real_metrics.json
-
-# macOS
+__pycache__/
+.pytest_cache/
+*.pyc
 .DS_Store
-
-# IDE
-.vscode/
-.idea/
-real_report.txt
+models/*.joblib
+data/raw/
+data/processed/
+.streamlit/secrets.toml
+reports/real_metrics.json
